@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Una introduccion al universo de Crepusculo, sus personajes y sus libros.">
+    <title>Crepusculo | Una historia de amor y misterio</title>
+    <style>
+        :root {
+            --night: #101923;
+            --deep-night: #071017;
+            --mist: #dbe5e5;
+            --moon: #f2e8cf;
+            --rose: #b96f78;
+            --muted: #9daeb2;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            color: var(--mist);
+            background: var(--deep-night);
+            font-family: Georgia, 'Times New Roman', serif;
+            line-height: 1.6;
+        }
+
+        header {
+            min-height: 74vh;
+            padding: 28px 8vw 70px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: radial-gradient(circle at 75% 25%, rgba(242, 232, 207, .18), transparent 14%),
+                linear-gradient(145deg, rgba(16, 25, 35, .82), rgba(7, 16, 23, .97)),
+                url('https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1800&q=85') center/cover;
+            border-bottom: 1px solid rgba(242, 232, 207, .18);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .brand {
+            color: var(--moon);
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        nav a {
+            color: var(--mist);
+            text-decoration: none;
+            font-size: .9rem;
+        }
+
+        nav a:hover { color: var(--moon); }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            white-space: nowrap;
+        }
+
+        .hero { max-width: 680px; }
+
+        .eyebrow {
+            color: var(--rose);
+            font-family: Arial, sans-serif;
+            font-size: .75rem;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            margin: 12px 0 18px;
+            color: var(--moon);
+            font-size: clamp(3.5rem, 10vw, 7.8rem);
+            font-weight: normal;
+            line-height: .9;
+        }
+
+        .hero p { max-width: 530px; color: var(--mist); font-size: 1.15rem; }
+
+        main { padding: 72px 8vw; }
+
+        .intro {
+            max-width: 760px;
+            margin-bottom: 58px;
+        }
+
+        h2 { margin: 0 0 14px; color: var(--moon); font-size: 2.2rem; font-weight: normal; }
+
+        .intro p { color: var(--muted); font-size: 1.08rem; }
+
+        .facts {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: rgba(219, 229, 229, .18);
+            border: 1px solid rgba(219, 229, 229, .18);
+        }
+
+        .fact { padding: 30px; background: var(--night); }
+        .fact strong { display: block; color: var(--moon); font-size: 1.2rem; font-weight: normal; }
+        .fact span { color: var(--muted); font-family: Arial, sans-serif; font-size: .9rem; }
+
+        .characters { margin-top: 72px; }
+
+        .character-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .character {
+            padding: 24px;
+            border-left: 3px solid var(--rose);
+            background: #15232b;
+        }
+
+        .character h3 { margin: 0 0 6px; color: var(--moon); font-size: 1.35rem; font-weight: normal; }
+        .character p { margin: 0; color: var(--muted); font-family: Arial, sans-serif; font-size: .92rem; }
+
+        footer {
+            padding: 48px 8vw;
+            background: #060d12;
+            border-top: 1px solid rgba(242, 232, 207, .18);
+            font-family: Arial, sans-serif;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section h3 {
+            color: var(--moon);
+            font-size: 1rem;
+            font-weight: normal;
+            margin: 0 0 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-section p {
+            color: var(--muted);
+            font-size: .85rem;
+            margin: 0 0 12px;
+            line-height: 1.5;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-section li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: .85rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--moon);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+            margin-top: 12px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: rgba(219, 229, 229, .1);
+            border-radius: 50%;
+            color: var(--muted);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: rgba(185, 111, 120, .3);
+            color: var(--rose);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(219, 229, 229, .1);
+            margin-top: 32px;
+            padding-top: 24px;
+            text-align: center;
+            color: var(--muted);
+            font-size: .75rem;
+        }
+
+        @media (max-width: 700px) {
+            header { min-height: 82vh; padding: 22px 7vw 48px; }
+            nav a { display: none; }
+            h1 { font-size: 4.5rem; }
+            main { padding: 52px 7vw; }
+            .facts, .character-list { grid-template-columns: 1fr; }
+            footer { padding: 32px 7vw; }
+            .footer-container { grid-template-columns: 1fr; gap: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav aria-label="Navegacion principal">
+            <div class="brand">Saga Crepusculo</div>
+            <div class="nav-links">
+                <a href="#inicio">Inicio</a>
+                <a href="libros.html">Libros</a>
+                <a href="personajes.html">Personajes</a>
+                <a href="#galeria">Galeria</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+        </nav>
+
+        <div class="hero">
+            <div class="eyebrow">Una historia de amor y misterio</div>
+            <h1>Crepusculo</h1>
+            <p>En el pequeno pueblo de Forks, Bella Swan descubre que enamorarse puede llevarla a un mundo mucho mas peligroso y extraordinario de lo que imaginaba.</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="intro">
+            <h2>El comienzo de una leyenda</h2>
+            <p><em>Crepusculo</em> es la primera novela de la saga escrita por Stephenie Meyer. La historia sigue a Bella, una adolescente que se muda a Forks y conoce a Edward Cullen, un joven vampiro que guarda un secreto imposible de ignorar.</p>
+        </section>
+
+        <section class="facts" aria-label="Datos de la saga">
+            <div class="fact"><strong>Stephenie Meyer</strong><span>Autora de la novela</span></div>
+            <div class="fact"><strong>Forks, Washington</strong><span>Escenario principal</span></div>
+            <div class="fact"><strong>2005</strong><span>Publicacion del primer libro</span></div>
+        </section>
+
+        <section id="libros" class="characters">
+            <h2>Libros</h2>
+            <div class="character-list">
+                <article class="character"><h3>Crepusculo</h3><p>El primer encuentro entre Bella y Edward.</p></article>
+                <article class="character"><h3>Luna Nueva</h3><p>Una nueva etapa llena de decisiones y cambios.</p></article>
+                <article class="character"><h3>Eclipse</h3><p>El conflicto entre vampiros y licantropos crece.</p></article>
+            </div>
+        </section>
+
+        <section id="personajes" class="characters">
+            <h2>Personajes principales</h2>
+            <div class="character-list">
+                <article class="character">
+                    <h3>Bella Swan</h3>
+                    <p>Inteligente, decidida y capaz de enfrentarse a cualquier peligro por las personas que ama.</p>
+                </article>
+                <article class="character">
+                    <h3>Edward Cullen</h3>
+                    <p>Un vampiro centenario con apariencia de adolescente y una lucha constante contra su naturaleza.</p>
+                </article>
+                <article class="character">
+                    <h3>Jacob Black</h3>
+                    <p>El amigo leal de Bella que pertenece a una comunidad marcada por antiguos secretos.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="galeria" class="intro">
+            <h2>Galeria</h2>
+            <p>Explora los paisajes de Forks, los bosques y los momentos mas recordados de la saga.</p>
+        </section>
+
+        <section id="libros" class="intro">
+            <h2>Libros</h2>
+            <p>Una seccion especial para descubrir mas historias, ediciones y detalles del universo de Crepusculo.</p>
+        </section>
+
+        <section id="contacto" class="intro">
+            <h2>Contacto</h2>
+            <p>Comparte tu personaje favorito y tu libro preferido de la saga.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Sobre la Saga</h3>
+                <p>Una introducción al universo de Crepúsculo, sus personajes, libros y la historia de amor entre Bella y Edward.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="libros.html">Libros</a></li>
+                    <li><a href="personajes.html">Personajes</a></li>
+                    <li><a href="#galeria">Galería</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <p>Conecta con nosotros en redes sociales para más contenido</p>
+                <div class="social-links">
+                    <a href="#" title="Facebook" aria-label="Facebook">f</a>
+                    <a href="#" title="Twitter" aria-label="Twitter">𝕏</a>
+                    <a href="#" title="Instagram" aria-label="Instagram">📷</a>
+                    <a href="#" title="YouTube" aria-label="YouTube">▶</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Saga Crepúsculo. Todos los derechos reservados. | Diseño inspirado en el mundo del misterio y la fantasía.</p>
+        </div>
+    </footer>
+</body>
+</html>

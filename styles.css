@@ -1,0 +1,17 @@
+*{
+    box-sizing: border-box;
+}
+
+
+header{
+    background-color: rgb(0, 183, 255);
+    height: 90px;
+    border-bottom: 30px solid rgb(7, 82, 133);
+}
+
+
+.hero{
+    background-color: rgb(74, 69, 99);
+    height: 300px;
+    margin-bottom: 5%;
+}
