@@ -29,15 +29,15 @@
         }
 
         header {
-            padding: 24px 8vw;
+            padding: 24px 8vw 18px;
             border-bottom: 1px solid rgba(242, 232, 207, .18);
             background: linear-gradient(145deg, rgba(16, 25, 35, .96), var(--ink));
         }
 
         nav {
             display: flex;
-            align-items: center;
             justify-content: space-between;
+            align-items: center;
             gap: 24px;
         }
 
@@ -55,17 +55,20 @@
 
         .nav-links {
             display: flex;
-            gap: 0;
+            align-items: center;
+            gap: 24px;
+            white-space: nowrap;
         }
 
         nav a {
+            color: var(--text);
             font-family: Arial, sans-serif;
             font-size: .9rem;
-            margin-left: 24px;
+            text-decoration: none;
         }
 
         nav a:hover,
-        nav a[aria-current="page"] { color: var(--accent); }
+        nav a[aria-current="page"] { color: var(--title); }
 
         main {
             width: min(920px, 84vw);
@@ -83,28 +86,63 @@
 
         .character-list {
             display: grid;
+            gap: 22px;
+        }
+
+        .character-group {
+            display: grid;
             gap: 18px;
+        }
+
+        .character-group + .character-group {
+            margin-top: 18px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(242, 232, 207, .18);
+        }
+
+        .group-title {
+            margin: 0;
+            color: var(--title);
+            font-size: .82rem;
+            font-weight: normal;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            font-family: Arial, sans-serif;
+            opacity: .9;
         }
 
         .character {
             display: grid;
-            grid-template-columns: 1fr 150px;
+            grid-template-columns: 1fr 170px;
             align-items: center;
-            gap: 16px;
+            gap: 20px;
             min-height: 82px;
+            padding: 16px 18px 16px 20px;
+            border: 1px solid rgba(242, 232, 207, .14);
+            border-radius: 18px;
+            background: linear-gradient(135deg, rgba(185, 111, 120, 0.18), rgba(13, 20, 28, 0.9));
+            box-shadow: 0 18px 32px rgba(0, 0, 0, 0.18);
         }
 
-        .character:nth-child(even) { grid-template-columns: 150px 1fr; }
+        .character:nth-child(even) {
+            grid-template-columns: 170px 1fr;
+            background: linear-gradient(225deg, rgba(185, 111, 120, 0.18), rgba(13, 20, 28, 0.9));
+        }
         .character:nth-child(even) .character-info { grid-column: 2; grid-row: 1; }
         .character:nth-child(even) .portrait { grid-column: 1; grid-row: 1; }
 
-        .character-info { padding: 0 1px; }
+        .character-info {
+            padding: 10px 12px;
+            border-radius: 12px;
+            background: rgba(9, 15, 20, 0.16);
+        }
 
         .character h2 {
             margin: 0 0 7px;
             color: var(--title);
-            font-size: 1.15rem;
+            font-size: 1.25rem;
             font-weight: normal;
+            letter-spacing: .04em;
         }
 
         .character p {
@@ -116,11 +154,57 @@
         }
 
         .portrait {
-            width: 150px;
-            height: 190px;
+            width: 170px;
+            height: 210px;
             min-height: 0;
             background: #d3d5d5;
-            border: 1px solid rgba(255, 255, 255, .16);
+            border: 0;
+            border-radius: 12px;
+            background-position: center top;
+            background-size: cover;
+            background-repeat: no-repeat;
+            box-shadow: 0 12px 22px rgba(0,0,0,0.22);
+        }
+
+        .character:nth-child(2) .portrait {
+            background-image: url('imagenes/Bella Swan.jpg');
+            background-position: center 28%;
+            filter: saturate(1.05) contrast(1.04);
+        }
+
+        .character:nth-child(3) .portrait {
+            background-image: url('imagenes/edward cullen.jpg');
+            background-position: center 20%;
+            filter: saturate(1.08) contrast(1.06);
+        }
+
+        .character:nth-child(4) .portrait {
+            background-image: url('imagenes/jacob black.jpg');
+            background-position: center 22%;
+            filter: saturate(1.04) contrast(1.05);
+        }
+
+        .character:nth-child(5) .portrait {
+            background-position: center 18%;
+            filter: saturate(1.06) contrast(1.08);
+        }
+
+        .character:nth-child(6) .portrait {
+            background-image: url('imagenes/jasper hale.jpg');
+            background-position: center 18%;
+            filter: saturate(1.06) contrast(1.08);
+        }
+
+        .character:nth-child(7) .portrait {
+            background-image: url('imagenes/esme cullen.jpg');
+            background-position: center 18%;
+            filter: saturate(1.06) contrast(1.08);
+        }
+
+        .character:nth-child(5) .portrait {
+            background-image: url('imagenes/carlisle cullen.jpg');
+            background-position: center 18%;
+            filter: saturate(1.04) contrast(1.06);
         }
 
         .character:nth-child(odd) .portrait { justify-self: start; }
@@ -133,7 +217,80 @@
             font-family: Arial, sans-serif;
         }
 
-        footer p { margin: 0; }
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section h3 {
+            margin: 0 0 16px;
+            color: var(--title);
+            font-size: 1rem;
+            font-weight: normal;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: var(--muted);
+            font-size: .85rem;
+        }
+
+        .footer-section p {
+            margin: 0 0 12px;
+            line-height: 1.5;
+        }
+
+        .footer-section ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .footer-section li { margin-bottom: 10px; }
+
+        .footer-section a {
+            text-decoration: none;
+            transition: color .3s ease;
+        }
+
+        .footer-section a:hover { color: var(--title); }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+            margin-top: 12px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(219, 229, 229, .1);
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+            background: rgba(185, 111, 120, .3);
+        }
+
+        .footer-bottom {
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(219, 229, 229, .1);
+            color: var(--muted);
+            font-size: .75rem;
+            text-align: center;
+        }
+
+        .footer-bottom p { margin: 0; }
 
         @media (max-width: 620px) {
             header { padding: 20px 7vw; }
@@ -153,6 +310,7 @@
             .character h2 { font-size: 1rem; }
             .character p { font-size: .78rem; line-height: 1.5; }
             footer { padding: 32px 7vw; }
+            .footer-container { grid-template-columns: 1fr; gap: 24px; }
         }
 
         @media (max-width: 390px) {
@@ -171,11 +329,12 @@
         <nav aria-label="Navegacion principal">
             <a class="brand" href="index.html">Saga Crepusculo</a>
             <div class="nav-links">
-                <a href="index.html#inicio">Inicio</a>
+                <a href="index.html">Inicio</a>
                 <a href="libros.html">Libros</a>
                 <a href="personajes.html" aria-current="page">Personajes</a>
+                <a href="peliculas.html">Peliculas</a>
                 <a href="index.html#galeria">Galeria</a>
-                <a href="index.html#contacto">Contacto</a>
+                <a href="contact.html">Contacto</a>
             </div>
         </nav>
     </header>
@@ -183,46 +342,126 @@
     <main>
         <h1>Personajes de la saga Crepusculo</h1>
         <section class="character-list" aria-label="Personajes principales">
-            <article class="character">
-                <div class="character-info">
-                    <h2>Bella Swan</h2>
-                    <p>Inteligente, decidida y capaz de enfrentarse a cualquier peligro por las personas que ama. Su llegada a Forks cambia para siempre su vida y la de quienes la rodean.</p>
-                </div>
-                <div class="portrait" role="img" aria-label="Imagen de Bella Swan"></div>
-            </article>
-            <article class="character">
-                <div class="character-info">
-                    <h2>Edward Cullen</h2>
-                    <p>Un vampiro centenario con apariencia de adolescente. Edward lucha contra su naturaleza mientras intenta proteger a Bella de los peligros de su mundo.</p>
-                </div>
-                <div class="portrait" role="img" aria-label="Imagen de Edward Cullen"></div>
-            </article>
-            <article class="character">
-                <div class="character-info">
-                    <h2>Jacob Black</h2>
-                    <p>El amigo leal de Bella pertenece a una comunidad marcada por antiguos secretos. Su transformación lo enfrenta a un destino que nunca eligió.</p>
-                </div>
-                <div class="portrait" role="img" aria-label="Imagen de Jacob Black"></div>
-            </article>
-            <article class="character">
-                <div class="character-info">
-                    <h2>Alice Cullen</h2>
-                    <p>La hermana de Edward puede ver posibles futuros. Su energía y sensibilidad la convierten en una de las figuras más queridas de la familia Cullen.</p>
-                </div>
-                <div class="portrait" role="img" aria-label="Imagen de Alice Cullen"></div>
-            </article>
-            <article class="character">
-                <div class="character-info">
-                    <h2>Carlisle Cullen</h2>
-                    <p>El líder de la familia Cullen eligió vivir sin dañar a los humanos. Su compasión y experiencia sostienen a todos durante los momentos más difíciles.</p>
-                </div>
-                <div class="portrait" role="img" aria-label="Imagen de Carlisle Cullen"></div>
-            </article>
+            <div class="character-group">
+                <h2 class="group-title">Protagonistas</h2>
+                <article class="character">
+                    <div class="character-info">
+                        <h2>Bella Swan</h2>
+                        <p>Inteligente, decidida y capaz de enfrentarse a cualquier peligro por las personas que ama. Su llegada a Forks cambia para siempre su vida y la de quienes la rodean.</p>
+                    </div>
+                    <div class="portrait" role="img" aria-label="Imagen de Bella Swan"></div>
+                </article>
+                <article class="character">
+                    <div class="character-info">
+                        <h2>Edward Cullen</h2>
+                        <p>Un vampiro centenario con apariencia de adolescente. Edward lucha contra su naturaleza mientras intenta proteger a Bella de los peligros de su mundo.</p>
+                    </div>
+                    <div class="portrait" role="img" aria-label="Imagen de Edward Cullen"></div>
+                </article>
+                <article class="character">
+                    <div class="character-info">
+                        <h2>Jacob Black</h2>
+                        <p>El amigo leal de Bella pertenece a una comunidad marcada por antiguos secretos. Su transformación lo enfrenta a un destino que nunca eligió.</p>
+                    </div>
+                    <div class="portrait" role="img" aria-label="Imagen de Jacob Black"></div>
+                </article>
+            </div>
+
+            <div class="character-group">
+                <h2 class="group-title">Personajes secundarios</h2>
+                <article class="character">
+                    <div class="character-info">
+                        <h2>Victoria</h2>
+                        <p>Es una vampira que busca vengarse de Bella y Edward después de la muerte de James. Utiliza su habilidad para escapar y sobrevivir para intentar llevar adelante su plan.</p>
+                    </div>
+                    <div class="portrait" role="img" aria-label="Imagen de Victoria" style="            background-image: url('imagenes/victoria.jpg');
+"></div>
+                </article>
+                <article class="character">
+                    <div class="character-info">
+                        <h2>James</h2>
+                        <p>Es un vampiro rastreador extremadamente hábil que se convierte en una de las primeras grandes amenazas para Bella. Se caracteriza por su obsesión con perseguir a sus víctimas.</p>
+                    </div>
+                    <div class="portrait" role="img" aria-label="Imagen de James" style="            background-image: url('imagenes/james.jpg');
+"></div>
+                </article>
+                <article class="character">
+                    <div class="character-info">
+                        <h2>Alice Cullen</h2>
+                        <p>La hermana de Edward puede ver posibles futuros. Su energía y sensibilidad la convierten en una de las figuras más queridas de la familia Cullen.</p>
+                    </div>
+                    <div class="portrait" role="img" style=" background-image: url('imagenes/alice cullen.jpg');" aria-label="Imagen de Alice Cullen"></div>
+                </article>
+                <article class="character">
+                    <div class="character-info">
+                        <h2>Carlisle Cullen</h2>
+                        <p>El líder de la familia Cullen eligió vivir sin dañar a los humanos. Su compasión y experiencia sostienen a todos durante los momentos más difíciles.</p>
+                    </div>
+                    <div class="portrait" role="img" aria-label="Imagen de Carlisle Cullen" style="            background-image: url('imagenes/carlisle cullen.jpg');
+"></div>
+                </article>
+                <article class="character">
+                    <div class="character-info">
+                        <h2>Jasper Hale</h2>
+                        <p>Es uno de los hermanos Cullen y posee la capacidad de percibir y controlar las emociones de quienes lo rodean. Tiene un pasado relacionado con otros grupos de vampiros.</p>
+                    </div>
+                    <div class="portrait" role="img" aria-label="Imagen de Jasper Hale" style="            background-image: url('imagenes/jasper hale.jpg');
+"></div>
+                </article>
+                <article class="character">
+                    <div class="character-info">
+                        <h2>Rosalie Hale</h2>
+                        <p>Es una de las hermanas Cullen y se caracteriza por su belleza, personalidad fuerte y carácter reservado. A pesar de su apariencia distante, protege profundamente a su familia.</p>
+                    </div>
+                    <div class="portrait" role="img" aria-label="Imagen de Rosalie Hale" style="            background-image: url('imagenes/rosalie hale.jpg');
+"></div>
+                </article>
+                <article class="character">
+                    <div class="character-info">
+                        <h2>Esme Cullen</h2>
+                        <p>Esme Cullen es la madre adoptiva de la familia Cullen. Se destaca por su carácter cariñoso, protector y por mantener unida a su familia de vampiros.</p>
+                    </div>
+                    <div class="portrait" role="img" aria-label="Imagen de Esme Cullen" style="            background-image: url('imagenes/esme cullen.jpg');
+"></div>
+                </article>
+            </div>
         </section>
     </main>
 
     <footer id="final">
-        <p>FOOTER</p>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Sobre la Saga</h3>
+                <p>Una introducción al universo de Crepúsculo, sus personajes, libros y la historia de amor entre Bella y Edward.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="libros.html">Libros</a></li>
+                    <li><a href="personajes.html">Personajes</a></li>
+                    <li><a href="peliculas.html">Peliculas</a></li>
+                    <li><a href="index.html#galeria">Galería</a></li>
+                    <li><a href="index.html#contacto">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <p>Conecta con nosotros en redes sociales para más contenido</p>
+                <div class="social-links">
+                    <a href="#" title="Facebook" aria-label="Facebook">f</a>
+                    <a href="#" title="Twitter" aria-label="Twitter">𝕏</a>
+                    <a href="#" title="Instagram" aria-label="Instagram">📷</a>
+                    <a href="#" title="YouTube" aria-label="YouTube">▶</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Saga Crepúsculo. Todos los derechos reservados. | Diseño inspirado en el mundo del misterio y la fantasía.</p>
+        </div>
     </footer>
 </body>
 </html>
