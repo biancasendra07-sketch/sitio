@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Galería de fotos y momentos importantes de la saga Crepúsculo.">
+    <title>Galería | Saga Crepúsculo</title>
+    <style>
+        :root {
+            --ink: #050d14;
+            --panel: #121a22;
+            --text: #dfe7e7;
+            --title: #f1e8d7;
+            --muted: #9caeb3;
+            --accent: #b96f78;
+            --line: rgba(255,255,255,.14);
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            color: var(--text);
+            background: var(--ink);
+            font-family: Georgia, 'Times New Roman', serif;
+            line-height: 1.5;
+        }
+
+        header {
+            padding: 24px 8vw 18px;
+            border-bottom: 1px solid rgba(242, 232, 207, .18);
+            background: linear-gradient(145deg, rgba(16, 25, 35, .96), var(--ink));
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .brand,
+        nav a {
+            color: var(--title);
+            text-decoration: none;
+        }
+
+        .brand {
+            font-size: 1.15rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            white-space: nowrap;
+        }
+
+        nav a {
+            color: var(--text);
+            font-family: Arial, sans-serif;
+            font-size: .85rem;
+        }
+
+        nav a:hover,
+        nav a[aria-current="page"] { color: #f7ceb6; }
+
+        main {
+            width: min(1100px, 86vw);
+            margin: 0 auto;
+            padding: 52px 0 76px;
+        }
+
+        .intro {
+            max-width: 680px;
+            margin-bottom: 34px;
+        }
+
+        .eyebrow {
+            color: #d78390;
+            font-family: Arial, sans-serif;
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            margin: 10px 0 14px;
+            color: var(--title);
+            font-size: clamp(2.4rem, 6vw, 4.4rem);
+            font-weight: normal;
+            line-height: 1;
+        }
+
+        .intro p {
+            margin: 0;
+            color: var(--muted);
+            font-family: Arial, sans-serif;
+            font-size: .98rem;
+            line-height: 1.7;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-auto-rows: 190px;
+            gap: 10px;
+            width: min(940px, 100%);
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            background: #111b22;
+        }
+
+        .gallery-item:first-child {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .gallery-item img {
+            display: block;
+            width: 100%;
+            height: 0;
+            flex: 1;
+            min-height: 0;
+            object-fit: cover;
+            transition: transform .35s ease;
+        }
+
+        .gallery-item:hover img { transform: scale(1.04); }
+
+        .gallery-item figcaption {
+            padding: 10px 12px 12px;
+            color: var(--muted);
+            background: #111b22;
+            font-family: Arial, sans-serif;
+            font-size: .78rem;
+            line-height: 1.35;
+            text-align: center;
+        }
+
+        footer {
+            padding: 32px 8vw;
+            border-top: 1px solid rgba(242, 232, 207, .18);
+            background: #060d12;
+            color: var(--muted);
+            font-family: Arial, sans-serif;
+            font-size: .78rem;
+            text-align: center;
+        }
+
+        @media (max-width: 700px) {
+            .nav-links { display: none; }
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                grid-auto-rows: 270px;
+            }
+
+            .gallery-item:first-child {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav aria-label="Navegación principal">
+            <a class="brand" href="index.html">Saga Crepusculo</a>
+            <div class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="libros.html">Libros</a>
+                <a href="personajes.html">Personajes</a>
+                <a href="peliculas.html">Películas</a>
+                <a href="galeria.html" aria-current="page">Galería</a>
+                <a href="contact.html">Contacto</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro">
+            <span class="eyebrow">Recuerdos de la saga</span>
+            <h1>Galería</h1>
+            <p>Aquí podrás reunir fotos y momentos importantes de la historia de Bella, Edward y todos los personajes de Crepúsculo.</p>
+        </section>
+
+        <section class="gallery-grid" aria-label="Collage de fotos de la saga Crepúsculo">
+            <figure class="gallery-item">
+                <img src="imagenes/momento1.jpg" alt="Personajes de Crepúsculo corriendo por un paisaje nevado">
+                <figcaption>La familia Cullen corre junto a los lobos en la nieve.</figcaption>
+            </figure>
+            <figure class="gallery-item">
+                <img src="imagenes/momento2.jpg" alt="La familia Cullen reunida en una cafetería escolar">
+                <figcaption>Los Cullen comparten un momento en la escuela.</figcaption>
+            </figure>
+            <figure class="gallery-item">
+                <img src="imagenes/momento3.jpg" alt="Bella, Edward y un lobo en un paisaje nevado">
+                <figcaption>Dos mundos se encuentran en medio del invierno.</figcaption>
+            </figure>
+            <figure class="gallery-item">
+                <img src="imagenes/momento4.jpg" alt="Bella junto a un lobo en el bosque">
+                <figcaption>Bella comparte el bosque con un enorme lobo.</figcaption>
+            </figure>
+            <figure class="gallery-item">
+                <img src="imagenes/momento5.jpg" alt="Edward salva a Bella entre dos vehículos">
+                <figcaption>Edward salva a Bella en un instante de peligro.</figcaption>
+            </figure>
+            <figure class="gallery-item">
+                <img src="imagenes/momento6.jpg" alt="Cartel de bienvenida a Forks">
+                <figcaption>Forks recibe a quienes llegan a descubrir sus secretos.</figcaption>
+            </figure>
+            <figure class="gallery-item">
+                <img src="imagenes/momento7.jpg" alt="Bella y Jacob en una playa de la saga Crepúsculo">
+                <figcaption>Bella y Jacob se encuentran frente al mar.</figcaption>
+            </figure>
+            <figure class="gallery-item">
+                <img src="imagenes/momento8.jpg" alt="Escuela de Forks relacionada con la saga Crepúsculo">
+                <figcaption>La escuela de Forks es parte de la historia.</figcaption>
+            </figure>
+        </section>
+    </main>
+
+    <footer>&copy; 2024 Saga Crepúsculo. Todos los derechos reservados.</footer>
+</body>
+</html>
