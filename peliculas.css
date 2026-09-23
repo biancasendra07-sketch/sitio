@@ -1,0 +1,292 @@
+:root {
+    --ink: #050d14;
+    --panel: #121a22;
+    --poster: #d7d4d4;
+    --card: #e6e4e0;
+    --card-text: #1f1b1d;
+    --muted: #747d88;
+    --title: #f1e8d7;
+    --red: #d64141;
+    --red-dark: #b72424;
+    --line: rgba(255,255,255,.16);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--ink);
+    color: var(--title);
+    font-family: Georgia, 'Times New Roman', serif;
+    line-height: 1.5;
+}
+
+header {
+    padding: 24px 8vw 18px;
+    border-bottom: 1px solid rgba(242, 232, 207, .18);
+    background: linear-gradient(145deg, rgba(16, 25, 35, .96), var(--ink));
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.brand {
+    color: var(--title);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 1.15rem;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    white-space: nowrap;
+}
+
+.nav-links a {
+    color: var(--title);
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: .85rem;
+    opacity: .92;
+}
+
+.nav-links a:hover,
+.nav-links a[aria-current="page"] {
+    color: #f7ceb6;
+}
+
+main {
+    width: min(760px, 84vw);
+    margin: 0 auto;
+    padding: 42px 0 58px;
+}
+
+.movie-list {
+    display: grid;
+    gap: 18px;
+}
+
+.movie-card {
+    display: flex;
+    min-height: 170px;
+    align-items: stretch;
+    gap: 0;
+    overflow: hidden;
+}
+
+.movie-poster {
+    width: 210px;
+    min-width: 210px;
+    background: transparent center center / contain no-repeat;
+    border: 0;
+    box-shadow: none;
+}
+
+.movie-poster.twilight {
+    background-image: url('imagenes/pelicula de crepusuclo.jpg');
+}
+
+.movie-poster.new-moon {
+    background-image: url('imagenes/pelicula luna nueva.jpg');
+}
+
+.movie-poster.eclipse {
+    background-image: url('imagenes/pelicula eclipse.jpg');
+}
+
+.movie-poster.breaking-dawn {
+    background-image: url('imagenes/amanecer.jpg');
+}
+
+.movie-content {
+    position: relative;
+    flex: 1;
+    background: var(--card);
+    color: var(--card-text);
+    padding: 12px 18px 18px 18px;
+    border-radius: 0;
+    border: 0;
+    box-shadow: none;
+    margin-left: 0;
+    min-height: 170px;
+}
+
+.movie-content h2 {
+    margin: 0 0 10px;
+    color: var(--card-text);
+    font-size: 1.18rem;
+    font-weight: normal;
+}
+
+.movie-content p {
+    margin: 0;
+    max-width: 400px;
+    color: var(--muted);
+    font-family: Arial, sans-serif;
+    font-size: .8rem;
+    line-height: 1.55;
+}
+
+.movie-button {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 8px 18px;
+    background: var(--red);
+    color: #fff;
+    text-decoration: none;
+    border: 0;
+    border-radius: 3px;
+    font-family: Arial, sans-serif;
+    font-size: .8rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background .2s ease;
+}
+
+.movie-button:hover {
+    background: var(--red-dark);
+}
+
+.movie-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.movie-tag {
+    width: 8px;
+    height: 8px;
+    background: #c9c0b9;
+    border-radius: 50%;
+    opacity: 0.7;
+}
+
+footer {
+    padding: 48px 8vw;
+    background: #060d12;
+    border-top: 1px solid rgba(242, 232, 207, .18);
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section h3 {
+    margin: 0 0 16px;
+    color: var(--title);
+    font-size: 1rem;
+    font-weight: normal;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.footer-section p,
+.footer-section a {
+    color: var(--muted);
+    font-size: .85rem;
+}
+
+.footer-section p {
+    margin: 0 0 12px;
+    line-height: 1.5;
+}
+
+.footer-section ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-section li {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    text-decoration: none;
+    transition: color .3s ease;
+}
+
+.footer-section a:hover {
+    color: var(--title);
+}
+
+.social-links {
+    display: flex;
+    gap: 16px;
+    margin-top: 12px;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(219, 229, 229, .1);
+    color: var(--muted);
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    color: var(--red);
+    background: rgba(185, 111, 120, .3);
+}
+
+.footer-bottom {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(219, 229, 229, .1);
+    color: var(--muted);
+    font-size: .75rem;
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+@media (max-width: 700px) {
+    .nav-links {
+        display: none;
+    }
+
+    main {
+        width: min(88vw, 500px);
+        padding-top: 24px;
+    }
+
+    .movie-card {
+        min-height: 0;
+    }
+
+    .movie-poster {
+        width: 150px;
+        min-width: 150px;
+    }
+
+    .movie-content {
+        padding: 12px 14px 14px 16px;
+    }
+
+    .movie-content p {
+        max-width: none;
+        font-size: .74rem;
+    }
+}
