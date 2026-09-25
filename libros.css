@@ -157,18 +157,17 @@ h2 {
     line-height: 1.5;
 }
 
-.book-link {
+.book-details {
     display: inline-block;
     margin-top: 12px;
     color: var(--accent);
     font-family: Arial, sans-serif;
     font-size: .72rem;
-    letter-spacing: 1px;
-    text-decoration: none;
-    text-transform: uppercase;
 }
 
-.book-link:hover { color: var(--title); }
+.book-details summary { width: fit-content; cursor: pointer; letter-spacing: 1px; text-transform: uppercase; }
+.book-details summary:hover { color: var(--title); }
+.book-details p { max-width: 680px; margin-top: 10px; }
 
 footer {
     padding: 48px 8vw;

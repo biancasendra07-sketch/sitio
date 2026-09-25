@@ -10,7 +10,7 @@
 <body>
     <header>
         <nav aria-label="Navegación principal">
-            <a class="brand" href="index.html">Saga Crepusculo</a>
+            <a class="brand" href="index.html">Saga Crepúsculo</a>
             <div class="nav-links">
                 <a href="index.html">Inicio</a>
                 <a href="libros.html">Libros</a>
@@ -30,35 +30,35 @@
                 <p>Si te apasiona la historia de Bella y Edward, este espacio es para compartir tus opiniones, preguntas o el personaje que más te gusta de la saga.</p>
 
                 <div class="contact-details">
-                    <div class="contact-item"><strong>Email:</strong> contacto@crepusculo.com</div>
+                    <div class="contact-item"><strong>Email:</strong> <a href="mailto:contacto@crepusculo.com">contacto@crepusculo.com</a></div>
                     <div class="contact-item"><strong>Instagram:</strong> @sagacrepusculo</div>
                     <div class="contact-item"><strong>Ubicación:</strong> Forks, Washington</div>
                 </div>
             </div>
 
-            <form class="contact-form">
+            <form class="contact-form" action="mailto:contacto@crepusculo.com" method="post" enctype="text/plain">
                 <div class="field-row">
                     <div>
                         <label for="nombre">Nombre</label>
-                        <input id="nombre" type="text" placeholder="Tu nombre">
+                        <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required>
                     </div>
                     <div>
                         <label for="email">Email</label>
-                        <input id="email" type="email" placeholder="tuemail@email.com">
+                        <input id="email" name="email" type="email" placeholder="tuemail@email.com" required>
                     </div>
                 </div>
 
                 <div>
                     <label for="asunto">Asunto</label>
-                    <input id="asunto" type="text" placeholder="¿Sobre qué quieres hablar?">
+                    <input id="asunto" name="asunto" type="text" placeholder="¿Sobre qué quieres hablar?" required>
                 </div>
 
                 <div>
                     <label for="mensaje">Mensaje</label>
-                    <textarea id="mensaje" placeholder="Escribe tu mensaje..."></textarea>
+                    <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje..." required></textarea>
                 </div>
 
-                <button class="submit-button" type="submit">Enviar</button>
+                <button class="submit-button" type="submit">Enviar por correo</button>
             </form>
         </section>
     </main>
@@ -76,26 +76,24 @@
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="libros.html">Libros</a></li>
                     <li><a href="personajes.html">Personajes</a></li>
-                    <li><a href="peliculas.html">Peliculas</a></li>
+                    <li><a href="peliculas.html#peliculas">Películas</a></li>
                     <li><a href="galeria.html">Galería</a></li>
                     <li><a href="contact.html">Contacto</a></li>
                 </ul>
             </div>
 
             <div class="footer-section">
-                <h3>Síguenos</h3>
-                <p>Conecta con nosotros en redes sociales para más contenido.</p>
-                <div class="social-links">
-                    <a href="#" title="Facebook" aria-label="Facebook">f</a>
-                    <a href="#" title="Twitter" aria-label="Twitter">𝕏</a>
-                    <a href="#" title="Instagram" aria-label="Instagram">📷</a>
-                    <a href="#" title="YouTube" aria-label="YouTube">▶</a>
-                </div>
+                <h3>Explorar</h3>
+                <ul>
+                    <li><a href="galeria.html">Escenas de la saga</a></li>
+                    <li><a href="libros.html">Libros</a></li>
+                    <li><a href="peliculas.html#peliculas">Películas</a></li>
+                </ul>
             </div>
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2024 Saga Crepúsculo. Todos los derechos reservados. | Diseño inspirado en el mundo del misterio y la fantasía.</p>
+            <p>&copy; 2024 Saga Crepúsculo. Todos los derechos reservados. | Sitio realizado por Bianca Sendra.</p>
         </div>
     </footer>
 </body>
