@@ -37,10 +37,19 @@ nav {
 }
 
 .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
     color: var(--moon);
     font-size: 1.2rem;
     letter-spacing: 2px;
     text-transform: uppercase;
+}
+
+.brand-logo {
+    width: 36px;
+    height: 36px;
+    flex: 0 0 auto;
 }
 
 nav a {

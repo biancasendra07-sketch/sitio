@@ -37,11 +37,20 @@ nav {
 }
 
 .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
     color: var(--title);
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 1.5px;
     font-size: 1.15rem;
+}
+
+.brand-logo {
+    width: 36px;
+    height: 36px;
+    flex: 0 0 auto;
 }
 
 .nav-links {
