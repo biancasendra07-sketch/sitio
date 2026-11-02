@@ -1,6 +1,0 @@
-Options -Indexes
-DirectoryIndex index.html
-
-<FilesMatch "\.sql$">
-    Require all denied
-</FilesMatch>
