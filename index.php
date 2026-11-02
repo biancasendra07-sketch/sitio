@@ -1,3 +1,6 @@
+<?php
+require_once __DIR__ . '/auth.php';
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,20 +11,11 @@
     <meta name="description" content="Una introducción al universo de Crepúsculo, sus personajes y sus libros.">
     <title>Crepúsculo | Una historia de amor y misterio</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="auth.css">
 </head>
 <body>
     <header>
-        <nav aria-label="Navegacion principal">
-            <a class="brand" href="index.html"><img class="brand-logo" src="imagenes/logo-saga.svg" alt="">Saga Crepúsculo</a>
-            <div class="nav-links">
-                <a href="index.html">Inicio</a>
-                <a href="libros.html">Libros</a>
-                <a href="personajes.html">Personajes</a>
-                <a href="peliculas.html#peliculas">Películas</a>
-                <a href="galeria.html">Galería</a>
-                <a href="contact.html">Contacto</a>
-            </div>
-        </nav>
+        <?php require __DIR__ . '/site-nav.php'; ?>
 
         <div class="hero">
             <div class="eyebrow">Una historia de amor y misterio</div>
@@ -62,7 +56,7 @@
 
         <section id="galeria" class="home-gallery">
             <div class="home-gallery-heading">
-                <h2><a href="galeria.html">Momentos de la saga</a></h2>
+                <h2><a href="galeria.php">Momentos de la saga</a></h2>
                 <p>Desde la llegada a <strong>Forks</strong> hasta los encuentros que cambiaron la historia de Bella y Edward.</p>
             </div>
             <div class="home-gallery-grid">
@@ -84,13 +78,13 @@
         <section id="libros" class="intro">
             <h2>Libros</h2>
             <p>Descubre las historias, ediciones y detalles del universo de Crepúsculo.</p>
-            <a class="section-link" href="libros.html">Conocer los libros</a>
+            <a class="section-link" href="libros.php">Conocer los libros</a>
         </section>
 
         <section id="contacto" class="intro">
             <h2>Contacto</h2>
             <p>Comparte tu personaje favorito y tu libro preferido de la saga.</p>
-            <a class="section-link" href="contact.html">Escribir un mensaje</a>
+            <a class="section-link" href="contact.php">Escribir un mensaje</a>
         </section>
     </main>
 
@@ -104,21 +98,21 @@
             <div class="footer-section">
                 <h3>Enlaces Rápidos</h3>
                 <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="libros.html">Libros</a></li>
-                    <li><a href="personajes.html">Personajes</a></li>
-                    <li><a href="peliculas.html#peliculas">Películas</a></li>
-                    <li><a href="galeria.html">Galería</a></li>
-                    <li><a href="contact.html">Contacto</a></li>
+                    <li><a href="index.php">Inicio</a></li>
+                    <li><a href="libros.php">Libros</a></li>
+                    <li><a href="personajes.php">Personajes</a></li>
+                    <li><a href="peliculas.php#peliculas">Películas</a></li>
+                    <li><a href="galeria.php">Galería</a></li>
+                    <li><a href="contact.php">Contacto</a></li>
                 </ul>
             </div>
 
             <div class="footer-section">
                 <h3>Explorar</h3>
                 <ul>
-                    <li><a href="galeria.html">Escenas de la saga</a></li>
-                    <li><a href="peliculas.html#peliculas">Adaptaciones al cine</a></li>
-                    <li><a href="contact.html">Contacto</a></li>
+                    <li><a href="galeria.php">Escenas de la saga</a></li>
+                    <li><a href="peliculas.php#peliculas">Adaptaciones al cine</a></li>
+                    <li><a href="contact.php">Contacto</a></li>
                 </ul>
             </div>
         </div>

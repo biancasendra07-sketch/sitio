@@ -151,7 +151,8 @@ ALTER TABLE `personajes`
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `usuarios_email_unique` (`email`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas

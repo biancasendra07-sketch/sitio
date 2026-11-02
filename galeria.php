@@ -1,3 +1,7 @@
+<?php
+require_once __DIR__ . '/auth.php';
+require_login();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,20 +10,11 @@
     <meta name="description" content="Galería de fotos y momentos importantes de la saga Crepúsculo.">
     <title>Galería | Saga Crepúsculo</title>
     <link rel="stylesheet" href="galeria.css">
+    <link rel="stylesheet" href="auth.css">
 </head>
 <body>
     <header>
-        <nav aria-label="Navegación principal">
-            <a class="brand" href="index.html"><img class="brand-logo" src="imagenes/logo-saga.svg" alt="">Saga Crepúsculo</a>
-            <div class="nav-links">
-                <a href="index.html">Inicio</a>
-                <a href="libros.html">Libros</a>
-                <a href="personajes.html">Personajes</a>
-                <a href="peliculas.html">Películas</a>
-                <a href="galeria.html" aria-current="page">Galería</a>
-                <a href="contact.html">Contacto</a>
-            </div>
-        </nav>
+        <?php require __DIR__ . '/site-nav.php'; ?>
     </header>
 
     <main>

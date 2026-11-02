@@ -1,3 +1,7 @@
+<?php
+require_once __DIR__ . '/auth.php';
+require_login();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,20 +10,11 @@
     <meta name="description" content="Películas de la saga Crepúsculo.">
     <title>Películas | Saga Crepúsculo</title>
     <link rel="stylesheet" href="peliculas.css">
+    <link rel="stylesheet" href="auth.css">
 </head>
 <body>
     <header>
-        <nav aria-label="Navegación principal">
-            <a class="brand" href="index.html"><img class="brand-logo" src="imagenes/logo-saga.svg" alt="">Saga Crepúsculo</a>
-            <div class="nav-links">
-                <a href="index.html">Inicio</a>
-                <a href="libros.html">Libros</a>
-                <a href="personajes.html">Personajes</a>
-                <a href="peliculas.html" aria-current="page">Películas</a>
-                <a href="galeria.html">Galería</a>
-                <a href="contact.html">Contacto</a>
-            </div>
-        </nav>
+        <?php require __DIR__ . '/site-nav.php'; ?>
     </header>
 
     <main id="peliculas">
@@ -80,21 +75,21 @@
             <div class="footer-section">
                 <h3>Enlaces Rápidos</h3>
                 <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="libros.html">Libros</a></li>
-                    <li><a href="personajes.html">Personajes</a></li>
-                    <li><a href="peliculas.html#peliculas">Películas</a></li>
-                    <li><a href="galeria.html">Galería</a></li>
-                    <li><a href="index.html#contacto">Contacto</a></li>
+                    <li><a href="index.php">Inicio</a></li>
+                    <li><a href="libros.php">Libros</a></li>
+                    <li><a href="personajes.php">Personajes</a></li>
+                    <li><a href="peliculas.php#peliculas">Películas</a></li>
+                    <li><a href="galeria.php">Galería</a></li>
+                    <li><a href="index.php#contacto">Contacto</a></li>
                 </ul>
             </div>
 
             <div class="footer-section">
                 <h3>Explorar</h3>
                 <ul>
-                    <li><a href="galeria.html">Escenas de la saga</a></li>
-                    <li><a href="libros.html">Libros</a></li>
-                    <li><a href="contact.html">Contacto</a></li>
+                    <li><a href="galeria.php">Escenas de la saga</a></li>
+                    <li><a href="libros.php">Libros</a></li>
+                    <li><a href="contact.php">Contacto</a></li>
                 </ul>
             </div>
         </div>
