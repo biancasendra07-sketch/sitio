@@ -1,16 +1,16 @@
 <?php
 $currentPage = basename((string) ($_SERVER['SCRIPT_NAME'] ?? ''));
 $links = [
-    'index.php' => 'Inicio',
-    'libros.php' => 'Libros',
-    'personajes.php' => 'Personajes',
-    'peliculas.php' => 'Películas',
-    'galeria.php' => 'Galería',
-    'contact.php' => 'Contacto',
+    'index.html' => 'Inicio',
+    'libros.html' => 'Libros',
+    'personajes.html' => 'Personajes',
+    'peliculas.html' => 'Películas',
+    'galeria.html' => 'Galería',
+    'contact.html' => 'Contacto',
 ];
 ?>
 <nav aria-label="Navegación principal">
-    <a class="brand" href="index.php"><img class="brand-logo" src="imagenes/logo-saga.svg" alt="">Saga Crepúsculo</a>
+    <a class="brand" href="index.html"><img class="brand-logo" src="imagenes/logo-saga.svg" alt="">Saga Crepúsculo</a>
     <div class="nav-links">
         <?php foreach ($links as $href => $label): ?>
             <a href="<?= escape($href) ?>"<?= $currentPage === $href ? ' aria-current="page"' : '' ?>><?= escape($label) ?></a>

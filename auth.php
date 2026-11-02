@@ -21,7 +21,7 @@ function escape(string $value): string
 function require_login(): void
 {
     if (!isset($_SESSION['user_id'])) {
-        $page = basename((string) ($_SERVER['SCRIPT_NAME'] ?? 'index.php'));
+        $page = basename((string) ($_SERVER['SCRIPT_NAME'] ?? 'index.html'));
         header('Location: login.php?redirect=' . rawurlencode($page));
         exit;
     }
@@ -32,19 +32,25 @@ function redirect_after_login(): void
     $page = $_SESSION['redirect_after_login']
         ?? $_POST['redirect']
         ?? $_GET['redirect']
-        ?? 'index.php';
+        ?? 'index.html';
     $allowedPages = [
+        'index.html',
         'index.php',
+        'libros.html',
         'libros.php',
+        'personajes.html',
         'personajes.php',
+        'peliculas.html',
         'peliculas.php',
+        'galeria.html',
         'galeria.php',
+        'contact.html',
         'contact.php',
     ];
 
     unset($_SESSION['redirect_after_login']);
     if (!is_string($page) || !in_array($page, $allowedPages, true)) {
-        $page = 'index.php';
+        $page = 'index.html';
     }
 
     header('Location: ' . $page);

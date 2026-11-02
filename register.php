@@ -76,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <header>
         <nav aria-label="Navegación principal">
-            <a class="brand" href="index.php"><img class="brand-logo" src="imagenes/logo-saga.svg" alt="">Saga Crepúsculo</a>
+            <a class="brand" href="index.html"><img class="brand-logo" src="imagenes/logo-saga.svg" alt="">Saga Crepúsculo</a>
             <div class="nav-links"><a href="login.php">Iniciar sesión</a></div>
         </nav>
     </header>

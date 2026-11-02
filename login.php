@@ -13,14 +13,14 @@ $notice = ($_GET['registered'] ?? '') === '1'
     ? 'Tu cuenta fue creada. Ya podés iniciar sesión.'
     : ((($_GET['logged_out'] ?? '') === '1') ? 'Cerraste sesión correctamente.' : '');
 $email = '';
-$redirect = $_GET['redirect'] ?? 'index.php';
+$redirect = $_GET['redirect'] ?? 'index.html';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $rawEmail = $_POST['email'] ?? '';
     $rawPassword = $_POST['password'] ?? '';
     $email = is_string($rawEmail) ? trim($rawEmail) : '';
     $password = is_string($rawPassword) ? $rawPassword : '';
-    $redirect = $_POST['redirect'] ?? 'index.php';
+    $redirect = $_POST['redirect'] ?? 'index.html';
 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL) || $password === '') {
         $error = 'Ingresá un correo electrónico y una contraseña válidos.';
@@ -56,9 +56,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-$allowedPages = ['index.php', 'libros.php', 'personajes.php', 'peliculas.php', 'galeria.php', 'contact.php'];
+$allowedPages = [
+    'index.html',
+    'index.php',
+    'libros.html',
+    'libros.php',
+    'personajes.html',
+    'personajes.php',
+    'peliculas.html',
+    'peliculas.php',
+    'galeria.html',
+    'galeria.php',
+    'contact.html',
+    'contact.php',
+];
 if (!is_string($redirect) || !in_array($redirect, $allowedPages, true)) {
-    $redirect = 'index.php';
+    $redirect = 'index.html';
 }
 ?>
 <!DOCTYPE html>
@@ -73,7 +86,7 @@ if (!is_string($redirect) || !in_array($redirect, $allowedPages, true)) {
 <body>
     <header>
         <nav aria-label="Navegación principal">
-            <a class="brand" href="index.php"><img class="brand-logo" src="imagenes/logo-saga.svg" alt="">Saga Crepúsculo</a>
+            <a class="brand" href="index.html"><img class="brand-logo" src="imagenes/logo-saga.svg" alt="">Saga Crepúsculo</a>
             <div class="nav-links"><a href="register.php">Crear cuenta</a></div>
         </nav>
     </header>
