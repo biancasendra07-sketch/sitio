@@ -35,17 +35,11 @@ function redirect_after_login(): void
         ?? 'index.html';
     $allowedPages = [
         'index.html',
-        'index.php',
         'libros.html',
-        'libros.php',
         'personajes.html',
-        'personajes.php',
         'peliculas.html',
-        'peliculas.php',
         'galeria.html',
-        'galeria.php',
         'contact.html',
-        'contact.php',
     ];
 
     unset($_SESSION['redirect_after_login']);

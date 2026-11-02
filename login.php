@@ -58,17 +58,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 $allowedPages = [
     'index.html',
-    'index.php',
     'libros.html',
-    'libros.php',
     'personajes.html',
-    'personajes.php',
     'peliculas.html',
-    'peliculas.php',
     'galeria.html',
-    'galeria.php',
     'contact.html',
-    'contact.php',
 ];
 if (!is_string($redirect) || !in_array($redirect, $allowedPages, true)) {
     $redirect = 'index.html';
