@@ -109,19 +109,19 @@ h1 {
 }
 
 .book:first-child .book-cover {
-    background-image: url('imagenes/libro crepusuclo.jpg');
+    background-image: url('images/libro-crepusculo.jpg');
     background-position: center center;
     background-size: contain;
 }
 
 .book:nth-child(2) .book-cover {
-    background-image: url('imagenes/luna nueva.jpg');
+    background-image: url('images/luna-nueva.jpg');
     background-position: center center;
     background-size: contain;
 }
 
 .book:nth-child(3) .book-cover {
-    background-image: url('imagenes/eclipse.jpg');
+    background-image: url('images/eclipse.jpg');
     background-position: center center;
     background-size: contain;
 }
@@ -132,13 +132,13 @@ h1 {
 }
 
 .book:nth-child(4) .book-cover {
-    background-image: url('imagenes/amanecer.jpg');
+    background-image: url('images/amanecer.jpg');
     background-position: center center;
     background-size: contain;
 }
 
 .book:nth-child(5) .book-cover {
-    background-image: url('imagenes/libro sol de medianoche.jpg');
+    background-image: url('images/libro-sol-de-medianoche.jpg');
     background-position: center center;
     background-size: contain;
 }
@@ -270,4 +270,11 @@ footer {
     .book p { font-size: .78rem; }
     footer { padding: 32px 7vw; }
     .footer-container { grid-template-columns: 1fr; gap: 24px; }
+}
+
+/* Usuario logueado en el menú */
+.nav-user {
+    color: var(--muted, #9caeb3);
+    font-family: Arial, sans-serif;
+    font-size: .85rem;
 }

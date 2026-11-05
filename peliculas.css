@@ -102,19 +102,19 @@ main {
 }
 
 .movie-poster.twilight {
-    background-image: url('imagenes/pelicula de crepusuclo.jpg');
+    background-image: url('images/pelicula-crepusculo.jpg');
 }
 
 .movie-poster.new-moon {
-    background-image: url('imagenes/pelicula luna nueva.jpg');
+    background-image: url('images/pelicula-luna-nueva.jpg');
 }
 
 .movie-poster.eclipse {
-    background-image: url('imagenes/pelicula eclipse.jpg');
+    background-image: url('images/pelicula-eclipse.jpg');
 }
 
 .movie-poster.breaking-dawn {
-    background-image: url('imagenes/amanecer.jpg');
+    background-image: url('images/amanecer.jpg');
 }
 
 .movie-content {
@@ -298,4 +298,11 @@ footer {
         max-width: none;
         font-size: .74rem;
     }
+}
+
+/* Usuario logueado en el menú */
+.nav-user {
+    color: var(--muted, #9caeb3);
+    font-family: Arial, sans-serif;
+    font-size: .85rem;
 }

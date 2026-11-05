@@ -217,3 +217,10 @@ footer {
         grid-row: span 2;
     }
 }
+
+/* Usuario logueado en el menú */
+.nav-user {
+    color: var(--muted, #9caeb3);
+    font-family: Arial, sans-serif;
+    font-size: .85rem;
+}

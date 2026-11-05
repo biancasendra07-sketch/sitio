@@ -248,3 +248,10 @@ footer {
     footer { padding: 32px 7vw; }
     .footer-container { grid-template-columns: 1fr; gap: 24px; }
 }
+
+/* Usuario logueado en el menú */
+.nav-user {
+    color: var(--muted, #9caeb3);
+    font-family: Arial, sans-serif;
+    font-size: .85rem;
+}

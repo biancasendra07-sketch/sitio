@@ -323,3 +323,36 @@ footer {
         gap: 24px;
     }
 }
+
+/* Usuario logueado en el menú */
+.nav-user {
+    color: var(--muted, #9caeb3);
+    font-family: Arial, sans-serif;
+    font-size: .85rem;
+}
+
+/* Login y registro */
+.form-link {
+    color: var(--accent-strong);
+}
+
+.form-message {
+    margin: 0;
+    padding: 12px 16px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    font-family: Arial, sans-serif;
+    font-size: .9rem;
+}
+
+.form-message.error {
+    border-color: rgba(215, 131, 144, .6);
+    background: rgba(185, 111, 120, .15);
+    color: #f3c2c9;
+}
+
+.form-message.ok {
+    border-color: rgba(140, 200, 160, .5);
+    background: rgba(140, 200, 160, .12);
+    color: #c9ecd4;
+}

@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION['nombre']))
+{ header("Location: login.php");
+exit;}
+
+$pagina = "contacto";
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,17 +17,7 @@
 </head>
 <body>
     <header>
-        <nav aria-label="Navegación principal">
-            <a class="brand" href="index.html"><img class="brand-logo" src="imagenes/logo-saga.svg" alt="">Saga Crepúsculo</a>
-            <div class="nav-links">
-                <a href="index.html">Inicio</a>
-                <a href="libros.html">Libros</a>
-                <a href="personajes.html">Personajes</a>
-                <a href="peliculas.html">Películas</a>
-                <a href="galeria.html">Galería</a>
-                <a href="contact.html" aria-current="page">Contacto</a>
-            </div>
-        </nav>
+<?php include "nav.php"; ?>
     </header>
 
     <main>
@@ -73,21 +71,21 @@
             <div class="footer-section">
                 <h3>Enlaces Rápidos</h3>
                 <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="libros.html">Libros</a></li>
-                    <li><a href="personajes.html">Personajes</a></li>
-                    <li><a href="peliculas.html#peliculas">Películas</a></li>
-                    <li><a href="galeria.html">Galería</a></li>
-                    <li><a href="contact.html">Contacto</a></li>
+                    <li><a href="index.php">Inicio</a></li>
+                    <li><a href="libros.php">Libros</a></li>
+                    <li><a href="personajes.php">Personajes</a></li>
+                    <li><a href="peliculas.php#peliculas">Películas</a></li>
+                    <li><a href="galeria.php">Galería</a></li>
+                    <li><a href="contact.php">Contacto</a></li>
                 </ul>
             </div>
 
             <div class="footer-section">
                 <h3>Explorar</h3>
                 <ul>
-                    <li><a href="galeria.html">Escenas de la saga</a></li>
-                    <li><a href="libros.html">Libros</a></li>
-                    <li><a href="peliculas.html#peliculas">Películas</a></li>
+                    <li><a href="galeria.php">Escenas de la saga</a></li>
+                    <li><a href="libros.php">Libros</a></li>
+                    <li><a href="peliculas.php#peliculas">Películas</a></li>
                 </ul>
             </div>
         </div>

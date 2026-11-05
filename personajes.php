@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION['nombre']))
+{ header("Location: login.php");
+exit;}
+
+$pagina = "personajes";
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,17 +17,7 @@
 </head>
 <body>
     <header>
-        <nav aria-label="Navegacion principal">
-            <a class="brand" href="index.html"><img class="brand-logo" src="imagenes/logo-saga.svg" alt="">Saga Crepúsculo</a>
-            <div class="nav-links">
-                <a href="index.html">Inicio</a>
-                <a href="libros.html">Libros</a>
-                <a href="personajes.html" aria-current="page">Personajes</a>
-                <a href="peliculas.html#peliculas">Películas</a>
-                <a href="galeria.html">Galería</a>
-                <a href="contact.html">Contacto</a>
-            </div>
-        </nav>
+<?php include "nav.php"; ?>
     </header>
 
     <main>
@@ -57,7 +55,7 @@
                         <h2>Victoria</h2>
                         <p>Es una vampira que busca vengarse de Bella y Edward después de la muerte de James. Su habilidad para escapar y sobrevivir sostiene <strong>su plan de venganza</strong>.</p>
                     </div>
-                    <div class="portrait" role="img" aria-label="Imagen de Victoria" style="            background-image: url('imagenes/victoria.jpg');
+                    <div class="portrait" role="img" aria-label="Imagen de Victoria" style="            background-image: url('images/victoria.jpg');
 "></div>
                 </article>
                 <article class="character">
@@ -65,7 +63,7 @@
                         <h2>James</h2>
                         <p>Es un vampiro rastreador extremadamente hábil y una de las primeras grandes amenazas para Bella. Se caracteriza por <strong>perseguir obsesivamente a sus víctimas</strong>.</p>
                     </div>
-                    <div class="portrait" role="img" aria-label="Imagen de James" style="            background-image: url('imagenes/james.jpg');
+                    <div class="portrait" role="img" aria-label="Imagen de James" style="            background-image: url('images/james.jpg');
 "></div>
                 </article>
                 <article class="character">
@@ -73,14 +71,14 @@
                         <h2>Alice Cullen</h2>
                         <p>La hermana de Edward puede ver posibles futuros. Su <strong>energía y sensibilidad</strong> la convierten en una de las figuras más queridas de la familia Cullen.</p>
                     </div>
-                    <div class="portrait" role="img" style=" background-image: url('imagenes/alice cullen.jpg');" aria-label="Imagen de Alice Cullen"></div>
+                    <div class="portrait" role="img" style=" background-image: url('images/alice-cullen.jpg');" aria-label="Imagen de Alice Cullen"></div>
                 </article>
                 <article class="character">
                     <div class="character-info">
                         <h2>Carlisle Cullen</h2>
                         <p>El líder de la familia Cullen eligió vivir sin dañar a los humanos. Su <strong>compasión y experiencia</strong> sostienen a todos durante los momentos más difíciles.</p>
                     </div>
-                    <div class="portrait" role="img" aria-label="Imagen de Carlisle Cullen" style="            background-image: url('imagenes/carlisle cullen.jpg');
+                    <div class="portrait" role="img" aria-label="Imagen de Carlisle Cullen" style="            background-image: url('images/carlisle-cullen.jpg');
 "></div>
                 </article>
                 <article class="character">
@@ -88,7 +86,7 @@
                         <h2>Jasper Hale</h2>
                         <p>Es uno de los hermanos Cullen y posee la capacidad de <strong>percibir y controlar las emociones</strong> de quienes lo rodean. Tiene un pasado relacionado con otros grupos de vampiros.</p>
                     </div>
-                    <div class="portrait" role="img" aria-label="Imagen de Jasper Hale" style="            background-image: url('imagenes/jasper hale.jpg');
+                    <div class="portrait" role="img" aria-label="Imagen de Jasper Hale" style="            background-image: url('images/jasper-hale.jpg');
 "></div>
                 </article>
                 <article class="character">
@@ -96,7 +94,7 @@
                         <h2>Rosalie Hale</h2>
                         <p>Es una de las hermanas Cullen y se caracteriza por su belleza, personalidad fuerte y carácter reservado. A pesar de su apariencia distante, <strong>protege profundamente a su familia</strong>.</p>
                     </div>
-                    <div class="portrait" role="img" aria-label="Imagen de Rosalie Hale" style="            background-image: url('imagenes/rosalie hale.jpg');
+                    <div class="portrait" role="img" aria-label="Imagen de Rosalie Hale" style="            background-image: url('images/rosalie-hale.jpg');
 "></div>
                 </article>
                 <article class="character">
@@ -104,7 +102,7 @@
                         <h2>Esme Cullen</h2>
                         <p>Esme Cullen es la madre adoptiva de la familia Cullen. Se destaca por su carácter <strong>cariñoso y protector</strong>, y por mantener unida a su familia.</p>
                     </div>
-                    <div class="portrait" role="img" aria-label="Imagen de Esme Cullen" style="            background-image: url('imagenes/esme cullen.jpg');
+                    <div class="portrait" role="img" aria-label="Imagen de Esme Cullen" style="            background-image: url('images/esme-cullen.jpg');
 "></div>
                 </article>
             </div>
@@ -121,21 +119,21 @@
             <div class="footer-section">
                 <h3>Enlaces Rápidos</h3>
                 <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="libros.html">Libros</a></li>
-                    <li><a href="personajes.html">Personajes</a></li>
-                    <li><a href="peliculas.html#peliculas">Películas</a></li>
-                    <li><a href="galeria.html">Galería</a></li>
-                    <li><a href="index.html#contacto">Contacto</a></li>
+                    <li><a href="index.php">Inicio</a></li>
+                    <li><a href="libros.php">Libros</a></li>
+                    <li><a href="personajes.php">Personajes</a></li>
+                    <li><a href="peliculas.php#peliculas">Películas</a></li>
+                    <li><a href="galeria.php">Galería</a></li>
+                    <li><a href="index.php#contacto">Contacto</a></li>
                 </ul>
             </div>
 
             <div class="footer-section">
                 <h3>Explorar</h3>
                 <ul>
-                    <li><a href="galeria.html">Escenas de la saga</a></li>
-                    <li><a href="libros.html">Libros</a></li>
-                    <li><a href="contact.html">Contacto</a></li>
+                    <li><a href="galeria.php">Escenas de la saga</a></li>
+                    <li><a href="libros.php">Libros</a></li>
+                    <li><a href="contact.php">Contacto</a></li>
                 </ul>
             </div>
         </div>

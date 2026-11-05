@@ -213,19 +213,19 @@ h1 {
 }
 
 .character:nth-child(2) .portrait {
-    background-image: url('imagenes/Bella Swan.jpg');
+    background-image: url('images/bella-swan.jpg');
     background-position: center 28%;
     filter: saturate(1.05) contrast(1.04);
 }
 
 .character:nth-child(3) .portrait {
-    background-image: url('imagenes/edward cullen.jpg');
+    background-image: url('images/edward-cullen.jpg');
     background-position: center 20%;
     filter: saturate(1.08) contrast(1.06);
 }
 
 .character:nth-child(4) .portrait {
-    background-image: url('imagenes/jacob black.jpg');
+    background-image: url('images/jacob-black.jpg');
     background-position: center 22%;
     filter: saturate(1.04) contrast(1.05);
 }
@@ -236,19 +236,19 @@ h1 {
 }
 
 .character:nth-child(6) .portrait {
-    background-image: url('imagenes/jasper hale.jpg');
+    background-image: url('images/jasper-hale.jpg');
     background-position: center 18%;
     filter: saturate(1.06) contrast(1.08);
 }
 
 .character:nth-child(7) .portrait {
-    background-image: url('imagenes/esme cullen.jpg');
+    background-image: url('images/esme-cullen.jpg');
     background-position: center 18%;
     filter: saturate(1.06) contrast(1.08);
 }
 
 .character:nth-child(5) .portrait {
-    background-image: url('imagenes/carlisle cullen.jpg');
+    background-image: url('images/carlisle-cullen.jpg');
     background-position: center 18%;
     filter: saturate(1.04) contrast(1.06);
 }
@@ -368,4 +368,11 @@ footer {
     .character:nth-child(even) { gap: 10px; }
     .character h2 { font-size: .9rem; }
     .character p { font-size: .68rem; }
+}
+
+/* Usuario logueado en el menú */
+.nav-user {
+    color: var(--muted, #9caeb3);
+    font-family: Arial, sans-serif;
+    font-size: .85rem;
 }
