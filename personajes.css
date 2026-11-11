@@ -212,47 +212,6 @@ h1 {
     object-fit: cover;
 }
 
-.character:nth-child(2) .portrait {
-    background-image: url('images/bella-swan.jpg');
-    background-position: center 28%;
-    filter: saturate(1.05) contrast(1.04);
-}
-
-.character:nth-child(3) .portrait {
-    background-image: url('images/edward-cullen.jpg');
-    background-position: center 20%;
-    filter: saturate(1.08) contrast(1.06);
-}
-
-.character:nth-child(4) .portrait {
-    background-image: url('images/jacob-black.jpg');
-    background-position: center 22%;
-    filter: saturate(1.04) contrast(1.05);
-}
-
-.character:nth-child(5) .portrait {
-    background-position: center 18%;
-    filter: saturate(1.06) contrast(1.08);
-}
-
-.character:nth-child(6) .portrait {
-    background-image: url('images/jasper-hale.jpg');
-    background-position: center 18%;
-    filter: saturate(1.06) contrast(1.08);
-}
-
-.character:nth-child(7) .portrait {
-    background-image: url('images/esme-cullen.jpg');
-    background-position: center 18%;
-    filter: saturate(1.06) contrast(1.08);
-}
-
-.character:nth-child(5) .portrait {
-    background-image: url('images/carlisle-cullen.jpg');
-    background-position: center 18%;
-    filter: saturate(1.04) contrast(1.06);
-}
-
 .character:nth-child(odd) .portrait { justify-self: start; }
 .character:nth-child(even) .portrait { justify-self: end; }
 
