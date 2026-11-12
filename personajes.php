@@ -5,6 +5,25 @@ if (!isset($_SESSION['nombre']))
 exit;}
 
 $pagina = "personajes";
+
+require "conexion.php";
+
+$buscar = "";
+if (isset($_GET['buscar'])) {
+    $buscar = trim($_GET['buscar']);
+}
+
+$patron = "%" . $buscar . "%";
+
+$consulta = mysqli_prepare($conexion, "SELECT nombre, descripcion, imagen, grupo FROM personajes WHERE nombre LIKE ? ORDER BY grupo, id");
+mysqli_stmt_bind_param($consulta, "s", $patron);
+mysqli_stmt_execute($consulta);
+$resultado = mysqli_stmt_get_result($consulta);
+
+$titulos = [
+    "protagonista" => "Protagonistas",
+    "secundario" => "Personajes secundarios"
+];
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -22,90 +41,52 @@ $pagina = "personajes";
 
     <main>
         <h1>Personajes de la saga Crepúsculo</h1>
-        <section class="character-list" aria-label="Personajes principales">
-            <div class="character-group">
-                <h2 class="group-title">Protagonistas</h2>
-                <article class="character">
-                    <div class="character-info">
-                        <h2>Bella Swan</h2>
-                        <p><strong>Inteligente y decidida</strong>, es capaz de enfrentarse a cualquier peligro por las personas que ama. Su llegada a Forks cambia para siempre su vida y la de quienes la rodean.</p>
-                    </div>
-                    <div class="portrait" role="img" aria-label="Imagen de Bella Swan"></div>
-                </article>
-                <article class="character">
-                    <div class="character-info">
-                        <h2>Edward Cullen</h2>
-                        <p>Un vampiro centenario con apariencia de adolescente. <strong>Edward lucha contra su naturaleza</strong> mientras intenta proteger a Bella de los peligros de su mundo.</p>
-                    </div>
-                    <div class="portrait" role="img" aria-label="Imagen de Edward Cullen"></div>
-                </article>
-                <article class="character">
-                    <div class="character-info">
-                        <h2>Jacob Black</h2>
-                        <p>El amigo leal de Bella pertenece a una comunidad marcada por antiguos secretos. Su transformación lo enfrenta a <strong>un destino que nunca eligió</strong>.</p>
-                    </div>
-                    <div class="portrait" role="img" aria-label="Imagen de Jacob Black"></div>
-                </article>
-            </div>
 
-            <div class="character-group">
-                <h2 class="group-title">Personajes secundarios</h2>
-                <article class="character">
-                    <div class="character-info">
-                        <h2>Victoria</h2>
-                        <p>Es una vampira que busca vengarse de Bella y Edward después de la muerte de James. Su habilidad para escapar y sobrevivir sostiene <strong>su plan de venganza</strong>.</p>
-                    </div>
-                    <div class="portrait" role="img" aria-label="Imagen de Victoria" style="            background-image: url('images/victoria.jpg');
-"></div>
-                </article>
-                <article class="character">
-                    <div class="character-info">
-                        <h2>James</h2>
-                        <p>Es un vampiro rastreador extremadamente hábil y una de las primeras grandes amenazas para Bella. Se caracteriza por <strong>perseguir obsesivamente a sus víctimas</strong>.</p>
-                    </div>
-                    <div class="portrait" role="img" aria-label="Imagen de James" style="            background-image: url('images/james.jpg');
-"></div>
-                </article>
-                <article class="character">
-                    <div class="character-info">
-                        <h2>Alice Cullen</h2>
-                        <p>La hermana de Edward puede ver posibles futuros. Su <strong>energía y sensibilidad</strong> la convierten en una de las figuras más queridas de la familia Cullen.</p>
-                    </div>
-                    <div class="portrait" role="img" style=" background-image: url('images/alice-cullen.jpg');" aria-label="Imagen de Alice Cullen"></div>
-                </article>
-                <article class="character">
-                    <div class="character-info">
-                        <h2>Carlisle Cullen</h2>
-                        <p>El líder de la familia Cullen eligió vivir sin dañar a los humanos. Su <strong>compasión y experiencia</strong> sostienen a todos durante los momentos más difíciles.</p>
-                    </div>
-                    <div class="portrait" role="img" aria-label="Imagen de Carlisle Cullen" style="            background-image: url('images/carlisle-cullen.jpg');
-"></div>
-                </article>
-                <article class="character">
-                    <div class="character-info">
-                        <h2>Jasper Hale</h2>
-                        <p>Es uno de los hermanos Cullen y posee la capacidad de <strong>percibir y controlar las emociones</strong> de quienes lo rodean. Tiene un pasado relacionado con otros grupos de vampiros.</p>
-                    </div>
-                    <div class="portrait" role="img" aria-label="Imagen de Jasper Hale" style="            background-image: url('images/jasper-hale.jpg');
-"></div>
-                </article>
-                <article class="character">
-                    <div class="character-info">
-                        <h2>Rosalie Hale</h2>
-                        <p>Es una de las hermanas Cullen y se caracteriza por su belleza, personalidad fuerte y carácter reservado. A pesar de su apariencia distante, <strong>protege profundamente a su familia</strong>.</p>
-                    </div>
-                    <div class="portrait" role="img" aria-label="Imagen de Rosalie Hale" style="            background-image: url('images/rosalie-hale.jpg');
-"></div>
-                </article>
-                <article class="character">
-                    <div class="character-info">
-                        <h2>Esme Cullen</h2>
-                        <p>Esme Cullen es la madre adoptiva de la familia Cullen. Se destaca por su carácter <strong>cariñoso y protector</strong>, y por mantener unida a su familia.</p>
-                    </div>
-                    <div class="portrait" role="img" aria-label="Imagen de Esme Cullen" style="            background-image: url('images/esme-cullen.jpg');
-"></div>
-                </article>
+        <form class="character-search" action="personajes.php" method="get">
+            <label for="buscar">Buscar personaje por nombre</label>
+            <div class="character-search-controls">
+                <input id="buscar" name="buscar" type="search" placeholder="Por ejemplo: Cullen" value="<?php echo htmlspecialchars($buscar); ?>">
+                <button type="submit">Buscar</button>
             </div>
+        </form>
+
+        <?php if ($buscar != "") { ?>
+            <p class="search-message">
+                <?php echo mysqli_num_rows($resultado); ?> resultado(s) para "<?php echo htmlspecialchars($buscar); ?>".
+                <a href="personajes.php">Ver todos</a>
+            </p>
+        <?php } ?>
+
+        <section class="character-list" aria-label="Personajes">
+            <?php if (mysqli_num_rows($resultado) == 0) { ?>
+                <p class="search-message">No se encontró ningún personaje con ese nombre.</p>
+            <?php } ?>
+
+            <?php
+            $grupo_actual = "";
+            while ($personaje = mysqli_fetch_assoc($resultado)) {
+                if ($personaje['grupo'] != $grupo_actual) {
+                    if ($grupo_actual != "") {
+                        echo "</div>";
+                    }
+                    $grupo_actual = $personaje['grupo'];
+                    echo '<div class="character-group">';
+                    echo '<h2 class="group-title">' . $titulos[$grupo_actual] . '</h2>';
+                }
+            ?>
+                <article class="character">
+                    <div class="character-info">
+                        <h2><?php echo htmlspecialchars($personaje['nombre']); ?></h2>
+                        <p><?php echo htmlspecialchars($personaje['descripcion']); ?></p>
+                    </div>
+                    <div class="portrait" role="img" aria-label="Imagen de <?php echo htmlspecialchars($personaje['nombre']); ?>" style="background-image: url('<?php echo htmlspecialchars($personaje['imagen']); ?>');"></div>
+                </article>
+            <?php
+            }
+            if ($grupo_actual != "") {
+                echo "</div>";
+            }
+            ?>
         </section>
     </main>
 
